@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { UserModel } = require("../utils/database/UserEntity");
 
 // login route
 
@@ -8,8 +9,10 @@ const router = express.Router();
 // create route
 
 // read route
-router.get("/:userId", (request, response) => {
+router.get("/:userId", async (request, response) => {
   console.log("someone is trying to view data about the user with the ID of " + request?.params?.userId);
+
+  let result = await UserModel.findById(request.params.userId);
 
   response.json({
     message: "not yet implemented!",
