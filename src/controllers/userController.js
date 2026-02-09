@@ -9,7 +9,7 @@ const router = express.Router();
 
 // read route
 router.get("/:userId", (request, response) => {
-  console.log("someone is trying to view data about the user with the ID of " + request.params.userId);
+  console.log("someone is trying to view data about the user with the ID of " + request?.params?.userId);
 
   response.json({
     message: "not yet implemented!",

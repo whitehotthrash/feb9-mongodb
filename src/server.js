@@ -11,11 +11,11 @@ app.get("/", (request, response) => {
   })
 })
 // unnamed export with alias
-// const { router: userRouter } = require("./controllers/userController")
+//const { router: userRouter } = require("./controllers/userController")
 
 // named export
 const userRouter = require("./controllers/userController")
-app.use("/users", userRouter)
+app.use("/userId", userRouter)
 
 module.exports = {
   app
