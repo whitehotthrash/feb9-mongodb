@@ -13,7 +13,7 @@ router.get("/:userId", async (request, response) => {
   console.log("someone is trying to view data about the user with the ID of " + request?.params?.userId);
 
   let result = await UserModel.findById(request.params.userId);
-
+  console.log(result)
   response.json({
     message: "not yet implemented!",
     params: request.params
