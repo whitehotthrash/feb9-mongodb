@@ -17,7 +17,3 @@ dbConnect().then(() => {
     console.log(`server is running on http://localhost:${PORT}`);
   });
 });
-
-// thingOne().then(() => {
-//   thingTwo()
-// })

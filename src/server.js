@@ -5,17 +5,19 @@
 const express = require("express");
 const app = express();
 
-app.get("/", (request, response) => {
-  response.json({
-    message: "hello world"
-  })
-})
+app.use(express.json());
+
+// app.get("/", (request, response) => {
+//   response.json({
+//     message: "hello world"
+//   })
+// })
 // unnamed export with alias
 //const { router: userRouter } = require("./controllers/userController")
 
 // named export
 const userRouter = require("./controllers/userController")
-app.use("/userId", userRouter)
+app.use("/user", userRouter)
 
 module.exports = {
   app
