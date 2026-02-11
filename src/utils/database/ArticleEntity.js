@@ -13,8 +13,11 @@ const ArticleSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    // someUser.id - string version
+    // someUser._id - objectID version
     author: {
-      type: UserModel,
+      type: mongoose.Types.ObjectID,
+      ref: "User",
       required: true,
     },
   },
