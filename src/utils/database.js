@@ -8,7 +8,7 @@ async function dbConnect(){
   console.log(dbUrl);
 
   // temporary workaround until node 25.6.1 is available
-  require('node:dns').setServers(['8.8.8.8', '1.1.1.1']);
+  // require('node:dns').setServers(['8.8.8.8', '1.1.1.1']);
   
   await mongoose.connect(dbUrl);
 
