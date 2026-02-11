@@ -34,8 +34,33 @@ router.get("/:userId", async (request, response) => {
   });
 });
 // update route
+router.patch("/id/:userId", async (request, response) => {
+  // find the target user
+  let targetUser = await UserModel.findById(request.params.userId);
+
+  // update the target user
+  // if (request.body.username == profanity){cancel update}
+  // single property method with validation
+  targetUser.username = request.body.username;
+
+  // update all properties on data provided in bulk
+  //targetUser = {...targetUser, ...request.body}
+  await targetUser.save();
+  
+  // return updated user data
+  response.json({
+    message:"user update operation complete",
+    data: targetUser
+  })
+  
+})
 
 // delete route
+router.delete("/id/:userId", async (request, response) => {
+  await UserModel.deleteOne({id: request.params.userId});
 
+  let resultAlternateWay = await UserModel.findByIdAndDelete(request.params.userId);
+
+})
 // unnamed or "default" export
 module.exports = router; // the only thing being exported by the file
