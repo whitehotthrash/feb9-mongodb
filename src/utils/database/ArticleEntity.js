@@ -25,5 +25,6 @@ const ArticleSchema = new mongoose.Schema(
   {
     timestamps: true,
     // createdAt and updatedAt automatically
+    // figure out other options
   },
 );
