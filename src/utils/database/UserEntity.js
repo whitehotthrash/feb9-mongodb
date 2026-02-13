@@ -14,6 +14,7 @@ const UserSchema = new mongoose.Schema({
 		unique: true,
 		default: "Tim"
 	}
+  // add options here
 });
 
 // 2. Make a model of the DB entity that uses the schema 
