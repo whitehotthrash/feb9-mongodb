@@ -19,6 +19,9 @@ app.use(express.json());
 const userRouter = require("./controllers/userController")
 app.use("/user", userRouter)
 
+const articleRouter = require("./controllers/articleController");
+app.use("/articles", articleRouter);
+
 module.exports = {
   app
 }

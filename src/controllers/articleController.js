@@ -14,5 +14,6 @@ router.get("/", async (request, response) => {
   })
 });
 
-
+// module.exports = {router: router} - not like this
+// default export syntax instead:
 module.exports = router;
