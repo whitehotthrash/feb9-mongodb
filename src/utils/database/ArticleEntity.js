@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 const { UserModel } = require("./UserEntity");
+const { LocalisedContentSchema } = require("./LocalisedContentSchema")
 
 // schemaVariable = new mongoose.Schema(fields, options)
 const ArticleSchema = new mongoose.Schema(
   // fields
   {
     title: {
-      type: String,
+      type: [LocalisedContentSchema], //this spreads out every character for some reason
       required: true,
     },
     body: {
