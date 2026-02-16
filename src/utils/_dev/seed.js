@@ -1,7 +1,7 @@
 // code to run that will connect to the db
 // and see default data in some models
 
-const { dbConnect } = require("../database");
+const { dbConnect, dbDisconnect } = require("../database");
 const { UserModel } = require("../database/UserEntity");
 const { ArticleModel } = require("../database/ArticleEntity");
 
@@ -27,11 +27,13 @@ async function seed() {
   ]
 
   // method 1 loop through articlesToSeed and make articles one by one
-  // method 2 provide the seed data array to model.insertMany
+  // method 2 provide the seed data array to model.insertMany - simpler
 
   let seedResult = await ArticleModel.insertMany(articlesToSeed)
   console.log(seedResult)
 
+
+  dbDisconnect();
   console.log("Seed file completed!");
 }
 
