@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { UserModel } = required("./UserEntity");
+const { UserModel } = require("./UserEntity");
 
 // schemaVariable = new mongoose.Schema(fields, options)
 const ArticleSchema = new mongoose.Schema(
@@ -11,14 +11,14 @@ const ArticleSchema = new mongoose.Schema(
     },
     body: {
       type: String,
-      require: true,
+      required: true,
     },
     // someUser.id - string version
     // someUser._id - objectID version
     // article has one author
     // users can be author to many articles
     author: {
-      type: mongoose.Types.ObjectID,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
