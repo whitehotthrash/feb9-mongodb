@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const { UserModel } = require("./UserEntity");
-const { LocalisedContentSchema } = require("./LocalisedContentSchema")
+//const { LocalisedContentSchema } = require("./LocalisedContentSchema")
 
 // schemaVariable = new mongoose.Schema(fields, options)
-const ArticleSchema = new mongoose.Schema(
+const JournalSchema = new mongoose.Schema(
   // fields
   {
     title: {
@@ -26,9 +26,9 @@ const ArticleSchema = new mongoose.Schema(
   },
 );
 
-const ArticleModel = mongoose.model("Article", ArticleSchema);
+const JournalModel = mongoose.model("Journal", JournalSchema);
 
 module.exports = {
   JournalSchema,
-  ArticleModel
+  JournalModel
 }
